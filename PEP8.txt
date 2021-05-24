@@ -1,0 +1,62 @@
+PEP 8
+
+Nommage
+Écrivez les noms de variables en minuscules, avec des underscores (tirets bas)
+Écrivez les variables constantes en majuscules, avec des underscores
+Écrivez les noms de classe avec une majuscule au début de chaque mot, sans ponctuation (la convention « CapitalizedCase »)
+Écrivez les noms de modules en minuscules, en évitant au maximum l’utilisation des underscores
+
+Commentaires
+Écrivez des phrases complètes en anglais (sauf s’il s’agit de code interne à une équipe qui préfère une autre langue).
+Évitez les commentaires qui contredisent le code. La PEP 8 est formelle : « Un commentaire qui contredit le code est pire que de ne pas en mettre ».
+Mettez les commentaires à jour lorsque le code change.
+Évitez les commentaires sur la même ligne que le code, ils font négligé.
+Mettez un seul espace entre le symbole dièse et le texte (pour différencier du code qui a été commenté).
+Utilisez le même niveau d’indentation que la ligne de code qui suit, pour une bonne lisibilité
+
+Les lignes entres les séries de trois guillemets et colorisées en jaune sont des docstrings – des commentaires spéciaux écrits au tout début d’une fonction, d’une classe ou d’un module, et utilisés pour la documentation. Les docstrings permettent de décrire votre code. Elles permettent aussi aux outils automatisés d’accéder au texte, par exemple pour générer une documentation en ligne de votre code.
+Les docstrings en début de fonction ou de classe sont spéciales, et on peut y accéder en utilisant l’attribut  __doc__
+    les docstrings sur une ligne (pour les cas les plus évidents) ;
+    les docstrings sur plusieurs lignes (pour les cas plus complexes).
+
+Exemple de doctstrings selon la convention Google :
+
+def search_film(name):
+    """Cherche un film selon un nom donné.
+ 
+    Attrs:
+    - name (str): le nom utilisé pour la recherche.
+ 
+    Returns:
+    - un objet `film` si un film a été trouvé, ou None.
+    """
+    # ...
+
+
+Espaces
+Mettez un seul espace autour des opérateurs d’affectation (  is_little = "little" in sanctuary  ) et des opérateurs logiques (  max_places  < 5  ). La seule exception intervient lorsque l’on fixe des valeurs par défaut en paramètres de fonctions et méthodes, telles que  max_places=4
+Ne laissez jamais d’espaces tout de suite à l’intérieur de parenthèses ou de crochets. Écrivez  (expression)  et  [0]
+Ne laissez pas de blanc entre une fonction, comme  print()  , et ses arguments.
+Laissez un espace entre  if  et toute parenthèse. La même règle s’applique à  for  . Ceci vise à être cohérent avec les situations où il n’y a pas de parenthèses.
+
+
+Sauts de ligne
+Avant une définition de classe (c’est-à-dire quand vous écrivez  class MyClass  ) ou une définition de fonction (c’est-à-dire quand vous écrivez  def my_function(...):  ), sautez deux lignes.
+Avant une définition de méthode au sein d’une classe, ne sautez qu’une seule ligne.
+
+Longueur des lignes
+Limiter les lignes de code à 79 caractères.
+
+
+
+Organisation du fichier
+
+    Les commentaires qui concernent la totalité du fichier vont en haut.
+    Les imports suivent cet ordre :
+        Modules de la bibliothèque standard, par exemple  import random  .
+        Modules de bibliothèques tierces, par exemple  import sklearn  .
+        Modules locaux, par exemple  import mymodule  .
+    Les constantes, par exemple  MY_CONSTANT = 77  .
+    Tout autre code.
+
+    
